@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="north-plugin-spotlight" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>NorthPluginSpotlight</name>
+    <js-module name="NorthPluginSpotlight" src="www/NorthPluginSpotlight.js">
+        <clobbers target="spotlight" />
+    </js-module>
+
+	<platform name="ios">
+	  <config-file target="config.xml" parent="/*">
+	    <feature name="NorthPluginSpotlight">
+	      <param name="ios-package" value="NorthPluginSpotlight" />
+	    </feature>
+	  </config-file>
+	  <header-file src="src/ios/NorthPluginSpotlight-Bridging-Header.h"/>
+	  <source-file src="src/ios/NorthPluginSpotlight.swift" />
+	</platform>
+
+	<dependency id="cordova-plugin-swift-support" version="~3.1.0"/>
+</plugin>
