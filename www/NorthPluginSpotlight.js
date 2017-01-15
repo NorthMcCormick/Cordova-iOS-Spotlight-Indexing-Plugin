@@ -1,11 +1,29 @@
 var exec = require('cordova/exec');
 
+var _API_CLASS = 'NorthPluginSpotlight';
+
+function execute(method, params) {
+    params = !params ? [] : params;
+
+    return new Promise(function (resolve, reject) {
+        exec(function (res) {
+            resolve(res);
+        }, function (err) {
+            reject(err);
+        }, _API_CLASS, method, params);
+    });
+}
+
 exports.coolMethod = function(arg0, success, error) {
-    exec(success, error, "NorthPluginSpotlight", "coolMethod", [arg0]);
+    exec(success, error, _API_CLASS, "coolMethod", [arg0]);
 };
 
 exports.echo = function(arg0, success, error) {
-  exec(success, error, "NorthPluginSpotlight", "echo", [arg0]);
+  exec(success, error, _API_CLASS, "echo", [arg0]);
+};
+
+exports.indexItem = function(arg0) {
+	return execute('indexItem', [arg0])
 };
 
 exports.echojs = function(arg0, success, error) {
