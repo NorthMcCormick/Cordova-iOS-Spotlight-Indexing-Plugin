@@ -26,6 +26,10 @@ exports.indexItem = function(arg0) {
 	return execute('indexItem', [arg0])
 };
 
+exports.removeIndexedItem = function(arg0) {
+	return execute('removeIndexedItem', [arg0])
+};
+
 exports.echojs = function(arg0, success, error) {
   if (arg0 && typeof(arg0) === 'string' && arg0.length > 0) {
     success(arg0);
